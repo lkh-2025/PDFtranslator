@@ -1,0 +1,36 @@
+# 模型权重（GGUF 分片，约 4.36 GB）不进仓库
+models/
+# 构建产物与发行包
+dist/
+build/
+# 翻译产物、阶段 JSON、自检报告与预览图
+out/
+# 虚拟环境
+.venv/
+venv/
+# Python 缓存
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+# 日志与临时文件
+*.log
+*.tmp
+*.part
+# 工作区根目录的输入 PDF 不入库
+/*.pdf
+# 本机数据：界面设置、术语检索缓存
+config/ui_settings.json
+config/terms_cache.json
+ui_settings.json
+# 开发日志：只在本机保留，不随仓库发布
+CHANGELOG.md
+# 可编辑安装产生的元数据
+*.egg-info/
+src/*.egg-info/
+# 系统与编辑器杂项
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

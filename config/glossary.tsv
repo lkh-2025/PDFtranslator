@@ -1,0 +1,99 @@
+# 用户词表（优先级最高）
+# 格式：原文<TAB>译法
+#   · 行首 # 为注释，空行忽略
+#   · 匹配不区分大小写，长词优先
+#   · 译法留空 = 保留英文原文（适合品牌名、方法名），例如：
+#       Northwind Analytics<TAB>
+# 想加自己的术语，直接在文件末尾追加一行即可，不需要改代码。
+
+# 常见 ML/CV 术语：保留原文或采用业界通行译法
+Transformer	Transformer
+Transformers	Transformer
+Vision Transformer	Vision Transformer
+Vision Transformers	Vision Transformer
+knowledge distillation	知识蒸馏
+distillation	蒸馏
+# 学术论文高频术语（补齐常见误译）
+inference	推理
+training	训练
+model weights	模型权重
+model weight	模型权重
+edge devices	边缘设备
+edge device	边缘设备
+abstraction	抽象化
+proposed	本文提出的
+rate-distortion	率失真
+quantization	量化
+# 对比实验里仍被译错的词
+orthogonal	正交
+propose	提出
+proposes	提出
+weight perturbation	权重扰动
+# 论文实测仍会错的学术高频词（长词优先，不会拆掉 model weight(s)）
+weight	权重
+weights	权重
+existing work	现有工作
+existing works	现有工作
+encoded representation	编码表示
+encoded representations	编码表示
+energy consumption	能耗
+object detection	目标检测
+instance segmentation	实例分割
+floating-point operations	浮点运算
+on-chip memory	片上内存
+# 方法名整体保留，避免被上面的单词规则拆开
+Unified Compression Training	统一压缩训练
+
+# 多模态大模型 / 视觉令牌剪枝方向（CVPR/ICCV/NeurIPS 论文高频词）
+large multimodal model	大型多模态模型
+large multimodal models	大型多模态模型
+large language model	大语言模型
+large language models	大语言模型
+multimodal large language model	多模态大语言模型
+vision-language model	视觉语言模型
+vision encoder	视觉编码器
+image encoder	图像编码器
+visual token	视觉令牌
+visual tokens	视觉令牌
+text token	文本令牌
+text tokens	文本令牌
+token pruning	令牌剪枝
+visual token pruning	视觉令牌剪枝
+pruning ratio	剪枝比例
+pruning	剪枝
+redundancy	冗余
+redundant	冗余的
+diversity	多样性
+subset selection	子集选择
+importance score	重要度分数
+importance scores	重要度分数
+calibration	校准
+fine-tuning	微调
+fine-tune	微调
+projection layer	投影层
+embedding	嵌入
+attention score	注意力分数
+attention scores	注意力分数
+self-attention	自注意力
+cross-attention	交叉注意力
+transformer layer	Transformer 层
+transformer layers	Transformer 层
+latency	延迟
+throughput	吞吐量
+benchmark	基准测试
+baseline	基线
+ablation study	消融实验
+dataset	数据集
+datasets	数据集
+annotation	标注
+accuracy	准确率
+top-1 accuracy	Top-1 准确率
+computational cost	计算开销
+memory footprint	内存占用
+state-of-the-art	最先进的
+end-to-end	端到端
+question answering	问答
+multiple-choice	多项选择
+zero-shot	零样本
+few-shot	少样本
+scaling law	缩放定律

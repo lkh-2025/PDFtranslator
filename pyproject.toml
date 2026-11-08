@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-translator"
+dynamic = ["version"]
+description = "本地离线把英文 PDF 重排翻译成中文：解析结构、统一术语、中文排版、自检输出"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "AGPL-3.0" }
+dependencies = [
+    "PyMuPDF>=1.24",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+ui = ["tkinterdnd2>=0.4"]
+offline = ["llama-cpp-python>=0.3.0"]
+
+[project.scripts]
+pdf-translator = "pdf_translator.__main__:main"
+pdf-translator-ui = "ui.app:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["pdf_translator*", "ui*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "pdf_translator.__version__"}
