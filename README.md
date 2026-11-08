@@ -40,6 +40,41 @@ pdf-translator --version
 
 ## 准备模型
 
+模型权重约 4.36 GB，不随仓库分发，需要单独下载 **Q4_K_M** 量化的两个分片。
+
+### 从哪里下载
+
+任选一个源，内容和文件名一致：
+
+- Hugging Face（官方）：https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF
+- ModelScope（国内推荐）：https://modelscope.cn/models/Qwen/Qwen2.5-7B-Instruct-GGUF
+- HF 镜像：https://hf-mirror.com/Qwen/Qwen2.5-7B-Instruct-GGUF
+
+浏览器直接下载这两个文件：
+
+1. https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q4_k_m-00001-of-00002.gguf?download=true
+2. https://huggingface.co/Qwen/Qwen2.5-7B-Instruct-GGUF/resolve/main/qwen2.5-7b-instruct-q4_k_m-00002-of-00002.gguf?download=true
+
+命令行下载（Hugging Face）：
+
+1. `python -m pip install -U huggingface_hub`
+2. `hf download Qwen/Qwen2.5-7B-Instruct-GGUF --include "qwen2.5-7b-instruct-q4_k_m-*" --local-dir D:\PDFTranslator\models\llm-gguf`
+
+`hf` 命令较旧时改用 `huggingface-cli download`，参数相同。国内直连 Hugging Face 慢时，先执行：
+
+1. `$env:HF_ENDPOINT = "https://hf-mirror.com"`
+
+再执行上面的 `hf download`。
+
+命令行下载（ModelScope）：
+
+1. `python -m pip install -U modelscope`
+2. `modelscope download --model Qwen/Qwen2.5-7B-Instruct-GGUF --include "qwen2.5-7b-instruct-q4_k_m-*" --local_dir D:\PDFTranslator\models\llm-gguf`
+
+不要 `git clone` 整个仓库：里面还有 fp16、q2、q3、q5、q6、q8 等十多个量化版本，全量约 50 GB。只要 `q4_k_m` 这两个分片。
+
+### 放到哪里
+
 模型目录的查找顺序（命令行与界面共用，见 `src/pdf_translator/paths.py`）：
 
 1. 环境变量 `PDF_TRANSLATOR_MODEL_DIR`
